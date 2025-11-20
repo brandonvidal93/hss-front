@@ -1,0 +1,18 @@
+/*
+ * Archivo de estilos globales para configurar Tailwind CSS.
+ * Las directivas @tailwind son procesadas por PostCSS.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos base (opcional, para definir la fuente) */
+@layer base {
+  /* Aquí se importaría la fuente Inter o se usaría el font-sans de Tailwind */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f7f9fc; /* Fondo claro para el dashboard */
+  }
+}
