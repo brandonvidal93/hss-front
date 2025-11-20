@@ -8,5 +8,5 @@ export interface Pastor {
   fechaOrdenacion: Date;
   licenciaMinisterial: string;
   estado: 'ACTIVO' | 'JUBILADO' | 'SANCIONADO' | 'EN_PROCESO';
-  temploId: string;
+  temploId: string | null;
 }

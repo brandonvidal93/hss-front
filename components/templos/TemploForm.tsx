@@ -107,7 +107,7 @@ const TemploForm: React.FC<TemploFormProps> = ({ temploToEdit, onSuccess, onCanc
     const payload = {
       ...formData,
       fechaFundacion: new Date(formData.fechaFundacion),
-      pastorPrincipalId: formData.pastorPrincipalId === '' ? '' : formData.pastorPrincipalId,
+      pastorPrincipalId: formData.pastorPrincipalId === '' ? null : formData.pastorPrincipalId,
     }
 
     // 🚨 2. VALIDACIÓN DE REGLA DE NEGOCIO
@@ -124,14 +124,33 @@ const TemploForm: React.FC<TemploFormProps> = ({ temploToEdit, onSuccess, onCanc
     // -------------------------------------
 
     try {
-      // ... (Lógica de TemploServices.update/create) ...
       if (isEditing && temploToEdit) {
-        await TemploServices.update(temploToEdit.id, {
+        const temploActualizado = await TemploServices.update(temploToEdit.id, {
           ...payload,
           id: temploToEdit.id,
         } as Templo);
+
+        const nuevoPastorId = payload.pastorPrincipalId;
+        const antiguoPastorId = temploToEdit.pastorPrincipalId;
+
+        console.log(nuevoPastorId, antiguoPastorId);
+
+        if (antiguoPastorId) {
+          // Llamamos a asignarTemplo con null para desasignar el templo
+          await PastorServices.asignarTemplo(antiguoPastorId, null);
+        }
+
+        if (nuevoPastorId) {
+          await PastorServices.asignarTemplo(nuevoPastorId, temploToEdit.id);
+        }
       } else {
-        await TemploServices.create(payload);
+        const nuevoTemplo = await TemploServices.create(payload as Templo);
+
+        console.log(nuevoTemplo);
+
+        if (payload.pastorPrincipalId) {
+          await PastorServices.asignarTemplo(payload.pastorPrincipalId, nuevoTemplo.id);
+        }
       }
       onSuccess();
     } catch (err: unknown) {

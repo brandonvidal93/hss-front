@@ -16,7 +16,7 @@ export const TemploServices = {
 
   async create(templo: Omit<Templo, 'id' | 'fechaRegistro'>): Promise<Templo> {
     const response = await axios.post(`${API_BASE_URL}/templos`, templo);
-    return response.data;
+    return response.data.data;
   },
 
   async update(id: string, templo: Templo): Promise<Templo> {

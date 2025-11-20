@@ -24,7 +24,9 @@ export const PastorServices = {
     return response.data;
   },
 
-  asignarTemplo: async (pastorId: string, temploId: string): Promise<Pastor> => {
+  asignarTemplo: async (pastorId: string, temploId: string | null): Promise<Pastor> => {
+    console.log('llega info:', pastorId, temploId);
+    
     const response = await axios.put(`${API_BASE_URL}/pastores/${pastorId}/asignar-templo`, { temploId });
     return response.data;
   },
