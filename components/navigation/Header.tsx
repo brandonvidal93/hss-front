@@ -10,7 +10,8 @@ interface HeaderProps {
  */
 const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   return (
-    <header className="fixed top-0 left-0 lg:left-64 right-0 bg-white shadow-md z-10 h-16 flex items-center justify-between px-4">
+    // <header className="fixed top-0 left-0 lg:left-64 right-0 bg-white shadow-md z-10 h-16 flex items-center justify-between px-4">
+    <header className="bg-white shadow-md h-16 flex items-center justify-between px-4">
       
       {/* Botón de Hamburguesa (Solo Visible en Móvil) */}
       <button 

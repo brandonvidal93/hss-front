@@ -21,12 +21,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
          <script src="https://cdn.tailwindcss.com"></script>
       </head>
       <body>
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen h-[100vh]">
           
           {/* Componente de la Barra Lateral (Visible en todas las páginas) */}
           <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
           
-          <div className="flex-grow">
+          <div className="flex-grow w-full md:w-[60%] lg:w-[75%]">
             {/* Componente del Encabezado (Visible en todas las páginas) */}
             <Header toggleSidebar={toggleSidebar} />
             

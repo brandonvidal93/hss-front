@@ -37,10 +37,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       )}
 
       {/* Barra Lateral Principal */}
-      <aside
+      {/* <aside
         className={`fixed top-0 left-0 w-64 bg-indigo-800 text-white h-full z-30 shadow-xl transition-transform duration-300 ease-in-out 
             ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
             lg:translate-x-0 lg:flex flex-col`}
+      > */}
+      <aside
+        className={`fixed z-30 lg:relative bg-indigo-800 text-white h-full shadow-xl transition-transform duration-300 ease-in-out 
+            ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
+            lg:translate-x-0 lg:flex flex-col w-40% md:w-[40%] lg:w-[25%]`}
       >
 
         {/* Logo/Título de la aplicación */}
@@ -59,9 +64,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           <div className="pt-4 border-t border-indigo-700 mt-4 space-y-2">
             <p className="text-xs font-semibold text-indigo-300 uppercase tracking-wider px-3 pb-1">Gestión de Flujos</p>
 
-            <NavItem href="/miembros" icon={<FaUsers className="w-5 h-5" />} label="Miembros (CRUD)" />
-            <NavItem href="/pastores" icon={<FaUser className="w-5 h-5" />} label="Pastores" />
             <NavItem href="/templos" icon={<FaChurch className="w-5 h-5" />} label="Templos" />
+            <NavItem href="/pastores" icon={<FaUser className="w-5 h-5" />} label="Pastores" />
+            <NavItem href="/miembros" icon={<FaUsers className="w-5 h-5" />} label="Miembros" />
             <NavItem href="/comites" icon={<FaListCheck className="w-5 h-5" />} label="Comités" />
           </div>
         </nav>

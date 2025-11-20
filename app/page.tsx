@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaListCheck } from 'react-icons/fa6';
-import { FaChurch, FaCode, FaCross, FaUsers } from 'react-icons/fa';
+import { FaCode, FaCross, FaUsers } from 'react-icons/fa';
 
 /**
  * Información del proyecto y desarrolladores (Para el dashboard de inicio).
@@ -37,8 +37,8 @@ const DashboardPage = () => {
 
   return (
     // Estilos para el contenido principal, dejando espacio para la Sidebar (lg:ml-64) y el Header (pt-16)
-    <main className="min-h-screen bg-gray-50 lg:ml-64 pt-16 p-6">
-      <div className="max-w-7xl mx-auto pt-[1.5rem]">
+    <main className="bg-gray-50 p-2 sm:p-3 lg:p-5">
+      <div className="max-w-7xl mx-auto">
 
         {/* Título Principal */}
         <div className="mb-8">
@@ -51,7 +51,6 @@ const DashboardPage = () => {
 
         {/* Sección de Información del Software */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-
           <ProjectInfoCard
             title="Arquitectura"
             content="Implementación de Arquitectura por Capas con principios SOLID, garantizando alta mantenibilidad y testeabilidad."
@@ -74,7 +73,7 @@ const DashboardPage = () => {
         {/* Sección de Desarrolladores */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Desarrolladores del Proyecto</h2>
-          <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+          <div className="bg-white px-6 py-2 rounded-xl shadow-lg border border-gray-100">
             <ul className="divide-y divide-gray-200">
               {developers.map((dev, index) => (
                 <li key={index} className="py-3 flex justify-between items-center">
