@@ -3,8 +3,8 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaPlus, FaListCheck } from 'react-icons/fa6';
-import ComiteList from '../../components/comites/ComiteList';
-import ComiteForm from '../../components/comites/ComiteForm';
+import ComiteList from '@/components/comites/ComiteList';
+import ComiteForm from '@/components/comites/ComiteForm';
 import { ComiteServices } from '@/services/ComiteService';
 import { Comite } from '../../types/Comite';
 
@@ -56,7 +56,7 @@ export default function ComitesPage() {
         await ComiteServices.delete(id);
         fetchComites(); // Recargar la lista
       } catch (err) {
-        setError('Error al eliminar el comité. Podría estar asignado a otros elementos.', err);
+        setError('Error al eliminar el comité. Podría estar asignado a otros elementos.' + err);
       }
     }
   };
