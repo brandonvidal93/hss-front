@@ -14,7 +14,7 @@ export const PastorServices = {
     return response.data;
   },
 
-  create: async (pastor: Pastor): Promise<Pastor> => {
+  create: async (pastor: Omit<Pastor, 'id' | 'fechaRegistro'>): Promise<Pastor> => {
     const response = await axios.post(`${API_BASE_URL}/pastores`, pastor);
     return response.data;
   },

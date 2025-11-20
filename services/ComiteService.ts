@@ -14,7 +14,7 @@ export const ComiteServices = {
     return response.data;
   },
 
-  create: async (comite: Comite): Promise<Comite> => {
+  create: async (comite: Omit<Comite, 'id' | 'fechaCreacion'>): Promise<Comite> => {
     const response = await axios.post(`${API_BASE_URL}/comites`, comite);
     return response.data;
   },

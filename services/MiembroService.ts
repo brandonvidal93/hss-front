@@ -14,7 +14,7 @@ export const MiembroServices = {
     return response.data;
   },
 
-  async create(miembro: Miembro): Promise<Miembro> {
+  async create(miembro: Omit<Miembro, 'id' | 'fechaRegistro'>): Promise<Miembro> {
     const response = await axios.post(`${API_BASE_URL}/miembros`, miembro);
     return response.data;
   },
