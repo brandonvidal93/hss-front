@@ -1,26 +1,18 @@
-@import "tailwindcss";
+/*
+ * Archivo de estilos globales para configurar Tailwind CSS.
+ * Las directivas @tailwind son procesadas por PostCSS.
+ */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Estilos base (opcional, para definir la fuente) */
+@layer base {
+  /* Aquí se importaría la fuente Inter o se usaría el font-sans de Tailwind */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f7f9fc; /* Fondo claro para el dashboard */
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
