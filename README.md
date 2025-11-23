@@ -4,7 +4,9 @@
 * Stiven Layos Rico
 * Andres Felipe Zapata
 * Brandon Vidal Jaramillo
-*(Roles: Arquitecto / Arquitecto Frontend / Arquitecto Backend)*
+* (Roles: Arquitecto / Arquitecto Frontend / Arquitecto Backend)*
+
+Sustentación: [Ver video](https://youtu.be/ys0HmjsGg_Y)
 
 ---
 
